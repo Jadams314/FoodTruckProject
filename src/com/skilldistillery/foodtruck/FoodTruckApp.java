@@ -1,12 +1,21 @@
 package com.skilldistillery.foodtruck;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class FoodTruckApp {
-private FoodTruckFleet fleet = new FoodTruckFleet();
+private int numTrucks = 0;
+private int MAX_Trucks = 5;
+public FoodTruck[] fTruck;
+
+
 static Scanner kb = new Scanner(System.in);
-	/*User Story #1
+
+
+
+
+/*User Story #1
 	 *	The user is prompted to input the name, food type, and rating for up to five food trucks.
 	 *	 For each set of input, a FoodTruck object is created, its fields set to the user's input,
 	 *	  and it is added to the array. The truck id is not input by the user, but instead assigned 
@@ -41,23 +50,26 @@ static Scanner kb = new Scanner(System.in);
 			System.out.println("What is the name of the food truck?");
 			String	name = kb.next();
 			System.out.println("What type of food does " + name + " have?");
-			String	type = kb.next();
+			String	foodType = kb.next();
 			System.out.println("On a scale of 1-5, how would you rate the food at " + name);
 			double	rating = kb.nextDouble();
 
-			FoodTruck fTruck = new FoodTruck (name, type, rating);
+			FoodTruck fTruck = new FoodTruck (name, foodType, rating);
+			addTruckToFleet(fTruck);
 			return fTruck;
 	}
-	public void addTruckToFleet(FoodTruck fTruck) {
-		fleet.addTruck(fTruck);
-		System.out.println("food Truck added");
+	public FoodTruck [] addTruckToFleet(FoodTruck newTruck) {
+	FoodTruck[] fTruck = new FoodTruck [numTrucks];
+	numTrucks++;
+	return fTruck;
 	}
-	public FoodTruck [] printTrucks() {
-		FoodTruck [] trucksInFleet = fleet.getTruck();
+	public void printTrucks(FoodTruck[] newTruck) {
+		System.out.println(Arrays.toString(fTruck));
 		
-		return trucksInFleet;
+		System.out.println();
 	}
 	public void avgRating() {
+
 		
 	}
 	public void highestRated() {
@@ -81,7 +93,7 @@ static Scanner kb = new Scanner(System.in);
 		switch (result) {
 		case 1:
 			System.out.println("Ok, here is the list of trucks stored");
-			System.out.println( fleet.truck[0] + " " );
+			printTrucks(fTruck);
 			break;
 		case 2:
 			avgRating();
@@ -102,6 +114,7 @@ static Scanner kb = new Scanner(System.in);
 		FoodTruckApp user = new FoodTruckApp();
 		
 		user.buildTruck();
+		user.addTruckToFleet(null);
 		user.printMenu();
 		kb.close();
 	}

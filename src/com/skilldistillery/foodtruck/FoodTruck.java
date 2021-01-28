@@ -1,10 +1,11 @@
 package com.skilldistillery.foodtruck;
 
 public class FoodTruck {
-	public String name;
-	public String foodType;
-	public double rating;
-	public int truckId;
+	private String name;
+	private String foodType;
+	private double rating;
+	private int truckId = 1;
+	private static int numTruck;
 /* When a FoodTruck is created, its constructor assigns its 
  * id field the current value of a static field (such as (nextTruckId) 
  * and then increments the static field.
@@ -16,7 +17,8 @@ public class FoodTruck {
 		this.name = name;
 		this.foodType = foodType;
 		this.rating = rating;
-		this.truckId = truckId++;
+		this.truckId = numTruck;
+		numTruck++;
 	}
 	public String getName() {
 		return name;
@@ -39,7 +41,15 @@ public class FoodTruck {
 	public int getTruckId() {
 		return truckId;
 	}
-	public double getAverage() {
-		return 0.0;
+	public double getAvg() {
+		double avg = rating / numTruck;
+		
+		
+		return avg;
 	}
+	public String toString() {
+		return "FoodTruck name = " + name + ", foodType = " + foodType + ", rating = " + rating + ", truckId = " + truckId;
+	}
+	
 }
+

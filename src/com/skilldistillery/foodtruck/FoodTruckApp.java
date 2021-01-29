@@ -9,35 +9,6 @@ public class FoodTruckApp {
 	public FoodTruck[] fleet;
 	public FoodTruck info = new FoodTruck();
 	static Scanner kb = new Scanner(System.in);
-	/*
-	 * User Story #1 The user is prompted to input the name, food type, and rating
-	 * for up to five food trucks. For each set of input, a FoodTruck object is
-	 * created, its fields set to the user's input, and it is added to the array.
-	 * The truck id is not input by the user, but instead assigned automatically in
-	 * the FoodTruck constructor from a static field that is incremented as each
-	 * truck is created.
-	 */
-
-// make user method to build food truck..... will ask the user for the name,food type and their rating
-	// after each truck ask if they would like to add another. they must be able to
-	// quit out of adding
-	// the truck during the name phase by typing quit.
-
-	/*
-	 * User Story #3 After input is complete, the user sees a menu from which they
-	 * can choose to:
-	 * 
-	 * List all existing food trucks. See the average rating of food trucks. Display
-	 * the highest-rated food truck. Quit the program.
-	 * 
-	 */
-
-// make print menu method with a switch
-	// think about adding another button to add another food truck if the user
-	// hasn't met the max entry's
-	// whether or not I add the option to add more trucks I need to have a counter
-	// for the number
-	// of trucks the user has added.
 
 	public void buildTruck() { // getting truck info to send to FoodTruck()
 
@@ -78,7 +49,7 @@ public class FoodTruckApp {
 
 	public void avgRating() {
 
-		double sum = 0; // will change to the total of the trucks rating
+		double sum = 0; 
 		for (int i = 0; i < numTrucks; i++) {
 			sum += fleet[i].getRating();
 		}

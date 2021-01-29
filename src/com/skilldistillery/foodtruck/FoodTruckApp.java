@@ -17,7 +17,7 @@ public class FoodTruckApp {
 	 * the FoodTruck constructor from a static field that is incremented as each
 	 * truck is created.
 	 */
-	
+
 // make user method to build food truck..... will ask the user for the name,food type and their rating
 	// after each truck ask if they would like to add another. they must be able to
 	// quit out of adding
@@ -57,7 +57,7 @@ public class FoodTruckApp {
 			addTruckToFleet(fTruck);
 		} else if (numTrucks == 5) {
 			System.out.println("Sorry but you have reached your limit of food trucks");
-			System.out.println("---------------");
+			System.out.println();
 			printMenu();
 		}
 	}
@@ -89,27 +89,26 @@ public class FoodTruckApp {
 	}
 
 	public void highestRated() {
-		
+
 		String name = " ";
 		double max = 0;
-		for (int i = 0; i < numTrucks; i++ ) {
-			if (fleet[i].getRating() > max ) {
+		for (int i = 0; i < numTrucks; i++) {
+			if (fleet[i].getRating() > max) {
 				max = fleet[i].getRating();
 				name = fleet[i].toString();
-				}
-		}	
+			}
+		}
 		System.out.println("The highest rated food truck is " + name);
 	}
 
 	public void printMenu() {
-		System.out.println("Welcome to the Menu");
-		System.out.println("---------------");
+		System.out.println("--------MENU----------");
 		System.out.println("1) Add a Food Truck ");
 		System.out.println("2) List all existing food trucks ");
 		System.out.println("3) See the average rating of food trucks ");
-		System.out.println("4) Disply the highest rated food truck ");
+		System.out.println("4) Display the highest rated food truck ");
 		System.out.println("5) Quit the program ");
-		System.out.println("---------------");
+		System.out.println("----------------------");
 		menuSwitch();
 	}
 
@@ -153,6 +152,7 @@ public class FoodTruckApp {
 		FoodTruckApp app = new FoodTruckApp();
 		app.fleet = new FoodTruck[5];
 
+		System.out.println("Welcome to the Food Truck App");
 		app.printMenu();
 		kb.close();
 	}

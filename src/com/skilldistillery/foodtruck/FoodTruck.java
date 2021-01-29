@@ -10,7 +10,7 @@ public class FoodTruck {
  * id field the current value of a static field (such as (nextTruckId) 
  * and then increments the static field.
  */
-	
+
 	public FoodTruck() {}
 
 	public FoodTruck(String name, String foodType, double rating) {
@@ -48,7 +48,7 @@ public class FoodTruck {
 		return avg;
 	}
 	public String toString() {
-		return "FoodTruck name = " + name + ", foodType = " + foodType + ", rating = " + rating + ", truckId = " + truckId;
+		return "FoodTruck Name: " + name + ", FoodType: " + foodType + ", Rating: " + rating + ", Truck ID Number: " + truckId;
 	}
 	
 }
